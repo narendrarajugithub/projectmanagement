@@ -29,6 +29,6 @@ public class ProjectMangementController {
 		projrepo.save(proj);
 
 		
-		return "redirect:/new";
+		return "redirect:/projects/new";
 	}
 }

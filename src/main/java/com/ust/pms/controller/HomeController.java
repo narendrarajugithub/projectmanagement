@@ -21,6 +21,6 @@ public class HomeController {
 	List <Project> projects=  projrepo.findAll();
 	
 	model.addAttribute("projects", projects);
-	return "/home";
+	return "main/home";
 	}
 }

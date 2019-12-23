@@ -22,7 +22,7 @@ public class EmployeeController {
 		System.out.println("inside new");
 		System.out.println("---------------------------------------------------");
 		
-		return "new-employee";
+		return "/employee/new-employee";
 	}
 	
 	@PostMapping("/save")

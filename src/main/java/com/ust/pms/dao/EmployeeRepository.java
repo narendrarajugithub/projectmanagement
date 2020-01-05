@@ -4,6 +4,8 @@ import org.springframework.stereotype.Repository;
 
 import com.ust.pms.entity.Employee;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee , Long>{
@@ -12,4 +14,6 @@ public interface EmployeeRepository extends CrudRepository<Employee , Long>{
 		to connect to the database we need to type the url like localhost:8080/h2-console
 		(spring.h2.console.path	=	/h2-console) from the application.properties file
 	*/	
+	
+	@Override List<Employee> findAll(); 
 }

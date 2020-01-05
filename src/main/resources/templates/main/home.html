@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<div>
 	<h4>Current Projects</h4>
 		<table>
 			<thead>
@@ -28,5 +29,28 @@
 			</tbody>
 		</table>
 </body>
+</div>
+<br><br>
+<div>
+	<h4>Current Employees</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>LastName</th>
+					<th>Email</th>
+				<tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp : ${employees}">
+					<td th:text= "${emp.firstname}">
+					<td th:text="${emp.lastname}">
+					<td th:text="${emp.email}"> 
+				</tr>
+			</tbody>
+		</table>
+</body>
+</div>
+
 
 </html>

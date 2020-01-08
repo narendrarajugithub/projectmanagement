@@ -1,5 +1,7 @@
 package com.ust.pms.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,13 @@ import javassist.expr.NewArray;
 public class ProjectMangementController {
 	@Autowired
 	ProjectDao projrepo;
+	
+	@GetMapping
+	public String allprojects(Model model) {
+		List<Project> proje= projrepo.findAll();
+		model.addAttribute("projects", proje);
+		return "projects/list-projects";
+	}
 	
 	@GetMapping("/new")
 	public String displayproject(Model model) {

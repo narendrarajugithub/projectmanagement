@@ -1,5 +1,7 @@
 package com.ust.pms.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,13 @@ import com.ust.pms.entity.Employee;
 public class EmployeeController {
 	@Autowired
 	EmployeeRepository employeeDao;
+	
+	@GetMapping
+	public String name(Model model) {
+		 List<Employee> emplist=	employeeDao.findAll();
+		 model.addAttribute("emplist", emplist);
+		 return "/employee/list-employees";
+	}
 	
 	@GetMapping("/new")
 	public String employee(Model emp) {

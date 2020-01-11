@@ -38,8 +38,8 @@ public class EmployeeController {
 	public String saveemployee(Model model,Employee emp) {
 		
 		employeeDao.save(emp);
-		System.out.println("---------------------------------------------------");
-		return "redirect:/employee/new";
+		System.out.println("---------------------------------------------------save");
+		return "redirect:/employees/new";
 	}
 	
 }

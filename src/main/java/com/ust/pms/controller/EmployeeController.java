@@ -13,7 +13,7 @@ import com.ust.pms.dao.EmployeeRepository;
 import com.ust.pms.entity.Employee;
 
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
 	@Autowired
 	EmployeeRepository employeeDao;

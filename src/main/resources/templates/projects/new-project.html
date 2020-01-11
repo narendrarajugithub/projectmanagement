@@ -2,7 +2,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<header th:replace="layout :: header"></header>
+<header th:replace="layouts :: header"></header>
 <!-- <head>
 	Required meta tags
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 </head> -->
 
 <body>
-	<nav th:replace="layout :: navbar"></nav>
+	<nav th:replace="layouts :: navbar"></nav>
 	
 	<div class="container">
 		<form action="/projects/save" th:object="${project}" method="POST">

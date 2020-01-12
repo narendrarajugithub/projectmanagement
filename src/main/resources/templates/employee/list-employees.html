@@ -27,9 +27,9 @@
 					</tr>
 				</thead>		
 				<tbody>
-					<tr th:each="aEmployee : ${employees}">
-						<td th:text="${aEmployee.firstName}"/>
-						<td th:text="${aEmployee.lastName}"/>
+					<tr th:each="aEmployee : ${emplist}">
+						<td th:text="${aEmployee.firstname}"/>
+						<td th:text="${aEmployee.lastname}"/>
 						<td th:text="${aEmployee.email}"/>
 					</tr>
 				</tbody>

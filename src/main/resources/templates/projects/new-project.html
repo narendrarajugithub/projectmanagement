@@ -16,7 +16,15 @@
 			<option th:value="INPROGRESS"> In Progress</option>
 			<option th:value="COMPLETED"> Completed</option>
 		</select>
-		
+		 <select multiple="multiple"  th:field = "*{empList}"	>
+		 <!--  th:field = "*{empList}" here empList is the property from the project and here 
+		 	we are sending final selection of employees to controler-->
+		   
+			 <option	th:each="employee :${empList}" 
+		 				th:text="${employee.firstname}"
+		 				th:value="${employee.employeeId}">
+		 	<!-- these list data came from controller , here the valuse are displaying for the selection purpose--> 
+			</select>  
 		
 		<button type="submit">Create Project</button>
 		

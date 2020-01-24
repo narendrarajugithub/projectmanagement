@@ -1,10 +1,15 @@
 package com.ust.pms.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -17,17 +22,23 @@ public class Employee {
 	private String lastname;
 	private String email;
 	
-	public Project getProject() {
+	
+	@ManyToMany(cascade =
+		  {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE
+		  } )
+	@JoinTable(name = "PROJECT_EMPLOYEE",
+ 	joinColumns = @JoinColumn(name="project_id"),
+ 	inverseJoinColumns = @JoinColumn(name="employee_id")
+ )
+	//this join column will map  parent table primary key
+	private List<Project> project;
+	
+	public List<Project> getProject() {
 		return project;
 	}
-	public void setProject(Project project) {
+	public void setProject(List<Project> project) {
 		this.project = project;
 	}
-	@ManyToOne
-	@JoinColumn(name = "projectId")
-	//this join column will map  parent table primary key
-	private Project project;
-	
 	public Employee(String firstname, String lastname, String email) {
 		super();
 		this.firstname = firstname;

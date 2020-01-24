@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -27,10 +29,14 @@ public class Project {
 	private String description;
 	
 	
-	  @OneToMany(cascade =
+	  @ManyToMany(cascade =
 	  {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.MERGE
-	  }, mappedBy = "project" )
-	 
+	  } )
+	
+	 @JoinTable(name = "PROJECT_EMPLOYEE",
+			 	joinColumns = @JoinColumn(name="project_id"),
+			 	inverseJoinColumns = @JoinColumn(name="employee_id")
+			 )
 	 private List<Employee> empList; 
 		
 	

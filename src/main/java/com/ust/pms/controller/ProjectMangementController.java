@@ -57,7 +57,7 @@ public class ProjectMangementController {
 		
 		
 		  for(Employee e:proj.getEmpList()) {
-			  e.setProject(proj);
+			 // e.setProject(proj);
 			  empDao.save(e);
 			  }
 		 

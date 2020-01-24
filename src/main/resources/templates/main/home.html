@@ -1,7 +1,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head th:replace="layouts :: header">
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,17 +15,19 @@
 <nav th:replace="layouts :: navbar" ></nav>
 <div>
 	<h4>Current Projects</h4>
-		<table>
-			<thead>
+		<table class="table table-borderd table-striped">
+			<thead class="thead-dark">
 				<tr>
 					<th>Project Name</th>
 					<th>Project Stage</th>
+					<th>Discription</th>
 				<tr>
 			</thead>
 			<tbody>
 				<tr th:each="aproj : ${projects}">
 					<td th:text= "${aproj.name}">
 					<td th:text="${aproj.stage}"> 
+					<td th:text="${aproj.description}">
 				</tr>
 			</tbody>
 		</table>
@@ -34,8 +36,8 @@
 <br><br>
 <div>
 	<h4>Current Employees</h4>
-		<table>
-			<thead>
+		<table class="table table-borderd table-striped">
+			<thead class="thead-dark">
 				<tr>
 					<th>Firstname</th>
 					<th>LastName</th>
@@ -52,6 +54,12 @@
 		</table>
 </body>
 </div>
-
-
+<div class="col-md-4" >
+	<canvas id="Mychart" height="50" width="50"></canvas>
+		<script type="text/javascript">
+			var chartdata="[[${projectsStatus}]]"
+			
+		</script>	
+</div>
+ <script type="text/javascript" th:src="@{js/Mychart.js}"></script>
 </html>

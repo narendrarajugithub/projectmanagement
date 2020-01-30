@@ -1,0 +1,30 @@
+##creating environment varibles in linux
+vi .bash_profile
+
+export version=0.1.1
+## To Save file end of file use below command from bellow
+  'wg'
+ 
+ ##To know the value of environment variable:
+echo $version 
+
+
+##Setting environment variable in eclipse select project then r-click select run-configurations
+## select environment tab and create  new variable over there.
+
+ ##dabse setup in spring
+
+spring.datasource.url 
+spring.datasource.username
+spring.datasource.urlpasswdrd
+
+#enable sql data file 
+spring.datasource.intilization-mode = never/always
+
+video 36
+@contextconfiguration
+@runwith
+@datajpatest
+@sequelgrup
+
+@springboottest

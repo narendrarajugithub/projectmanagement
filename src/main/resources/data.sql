@@ -1,13 +1,13 @@
 -- INSERT EMPLOYEES			
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'John', 'Warton', 'warton@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Mike', 'Lanister', 'lanister@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Steve', 'Reeves', 'Reeves@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Ronald', 'Connor', 'connor@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Jim', 'Salvator', 'Sal@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Peter', 'Henley', 'henley@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Richard', 'Carson', 'carson@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Honor', 'Miles', 'miles@gmail.com');
-insert into employee (employee_id, firstname, lastname, email) values (nextval('HIBERNATE_SEQUENCE'), 'Tony', 'Roggers', 'roggers@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (select HIBERNATE_SEQUENCE.NEXTVAL from dual, 'John', 'Warton', 'warton@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Mike', 'Lanister', 'lanister@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Steve', 'Reeves', 'Reeves@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Ronald', 'Connor', 'connor@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Jim', 'Salvator', 'Sal@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Peter', 'Henley', 'henley@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Richard', 'Carson', 'carson@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Honor', 'Miles', 'miles@gmail.com');
+insert into employee (employee_id, firstname, lastname, email) values (SELECT HIBERNATE_SEQUENCE.NEXTVAL FROM DUAL, 'Tony', 'Roggers', 'roggers@gmail.com');
 
 -- INSERT PROJECTS			
 insert into project (project_id, name, stage, description) values (nextval('project_seq'), 'Large Production Deploy', 'NOTSTARTED', 'This requires all hands on deck for the final deployment of the software into production');

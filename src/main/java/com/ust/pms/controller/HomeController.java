@@ -3,6 +3,7 @@ package com.ust.pms.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,10 @@ import com.ust.pms.entity.Project;
 
 @Controller
 public class HomeController {
+	
+	  @Value("${app.version}") public String version;
+	 
+	
 	@Autowired
 	ProjectDao projrepo;
 	
@@ -35,7 +40,7 @@ public class HomeController {
 	ObjectMapper chartdata =new ObjectMapper();
 	String jsonData= chartdata.writeValueAsString(ProjectStatus);
 	model.addAttribute("projectsStatus", jsonData);	
-	
+	model.addAttribute("version", version);
 	model.addAttribute("employees",employees);
 	model.addAttribute("projects", projects);
 	return "main/home";

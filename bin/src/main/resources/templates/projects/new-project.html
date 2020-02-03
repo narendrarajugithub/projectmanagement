@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-	<!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-</head>
+<header th:replace="layouts :: header"></header>
 
 <body>
-
-
+	<nav th:replace="layouts :: navbar"></nav>
 	
 	<div class="container">
 		<form action="/projects/save" th:object="${project}" method="POST">
@@ -27,8 +16,15 @@
 			<option th:value="INPROGRESS"> In Progress</option>
 			<option th:value="COMPLETED"> Completed</option>
 		</select>
-		
-		<textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+		 <select multiple="multiple"  th:field = "*{empList}"	>
+		 <!--  th:field = "*{empList}" here empList is the property from the project and here 
+		 	we are sending final selection of employees to controler-->
+		   
+			 <option	th:each="employee :${empList}" 
+		 				th:text="${employee.firstname}"
+		 				th:value="${employee.employeeId}">
+		 	<!-- these list data came from controller , here the valuse are displaying for the selection purpose--> 
+			</select>  
 		
 		<button type="submit">Create Project</button>
 		

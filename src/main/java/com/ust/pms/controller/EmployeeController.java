@@ -22,6 +22,7 @@ public class EmployeeController {
 	public String name(Model model) {
 		 List<Employee> emplist=	employeeDao.findAll();
 		 model.addAttribute("emplist", emplist);
+		 System.out.println("----------------------------------------------------------------------------->>..");
 		 return "/employee/list-employees";
 	}
 	

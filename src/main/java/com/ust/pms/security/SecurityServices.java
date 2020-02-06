@@ -32,7 +32,7 @@
   ("user").password("user1").roles("USER").and().withUser("admin1").password(
   "user1").roles("ADMIN");
   System.out.println("-------------------------------> authENTICATION config");
-  // super.configure(auth); 
+  
   }
   
   @Bean public PasswordEncoder getPasswordEncoder() {

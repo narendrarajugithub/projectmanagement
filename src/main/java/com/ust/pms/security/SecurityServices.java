@@ -37,7 +37,8 @@
   
   @Bean public PasswordEncoder getPasswordEncoder() {
   System.out.println("------->Pwd encription"); return
-  NoOpPasswordEncoder.getInstance(); }
+  NoOpPasswordEncoder.getInstance();
+  }
   
   @Override protected void configure(HttpSecurity http) throws Exception {
 	  //TODO Auto-generated method stub
